@@ -1,0 +1,28 @@
+format 224
+
+subject 128002 ""
+  xyzwh 201 14 2000 394 449
+textcanvas 128130 "Student Registation System"
+  xyzwh 326 29 2005 132 14
+classcanvas 128258 class_ref 128002 // Student
+  simpleclassdiagramsettings end
+  xyz 59 147 2000
+end
+classcanvas 128386 class_ref 128130 // Lecturer
+  simpleclassdiagramsettings end
+  xyz 670 169 2000
+end
+usecasecanvas 128514 usecase_ref 128002 // Enter Details
+  xyzwh 325 82 3005 119 57 label_xy 354 102
+end
+usecasecanvas 129026 usecase_ref 128130 // Login
+  xyzwh 333 193 3005 113 59 label_xy 374 212
+end
+line 128898 ----
+  from ref 128258 z 3006 to ref 128514
+line 129410 ----
+  from ref 128258 z 3006 to ref 129026
+simplerelationcanvas 129538 simplerelation_ref 128002
+  from ref 129026 z 3006 stereotype "<<include>>" xyz 356 165 3000 to ref 128514
+end
+end

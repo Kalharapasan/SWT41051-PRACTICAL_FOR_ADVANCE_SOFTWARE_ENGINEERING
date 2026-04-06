@@ -1,0 +1,405 @@
+format 224
+"Libary System" // Libary System
+  revision 2
+  modified_by 2 "Student"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  usecaseview 128002 "Libary_use_case"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 128002 "libary_use_case_diagram's"
+      usecasediagramsettings draw_all_relations no end
+      size A4
+    end
+
+    class 128002 "Users"
+      visibility package stereotype "actor"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 128130 "Administrators"
+      visibility package stereotype "actor"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    usecase 128002 "User Registeion"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 128002
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128130 // User Login
+      end
+
+      simplerelation 128386
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 128642 // Search Book
+      end
+
+      simplerelation 128514
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 128770 // Borrow Book
+      end
+
+      simplerelation 128898
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128898 // Return Book
+      end
+    end
+
+    usecase 128130 "User Login"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 135426
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128770 // Borrow Book
+      end
+    end
+
+    usecase 128258 "Adding Book"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 128130
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128386 // Update Book
+      end
+
+      simplerelation 128258
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128514 // Removing Book
+      end
+
+      simplerelation 128642
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 128770 // Borrow Book
+      end
+
+      simplerelation 128770
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128642 // Search Book
+      end
+
+      simplerelation 136066
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135554 // Admin Login
+      end
+    end
+
+    usecase 128386 "Update Book"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 135938
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135554 // Admin Login
+      end
+    end
+
+    usecase 128514 "Removing Book"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 136194
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135554 // Admin Login
+      end
+    end
+
+    usecase 128642 "Search Book"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    usecase 128770 "Borrow Book"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 135554
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128130 // User Login
+      end
+    end
+
+    usecase 128898 "Return Book"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 135682
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128130 // User Login
+      end
+    end
+
+    usecase 129026 "Reserve Book"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 135810
+	-_->
+	  stereotype "include"
+	  on usecase_ref 128130 // User Login
+      end
+
+      simplerelation 136322
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 128770 // Borrow Book
+      end
+    end
+
+    usecase 135554 "Admin Login"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+  end
+end

@@ -1,0 +1,99 @@
+format 224
+
+subject 128002 ""
+  xyzwh 210 51 2000 425 973
+classcanvas 128130 class_ref 128002 // Users
+  simpleclassdiagramsettings end
+  xyz 72 487 2000
+end
+classcanvas 128258 class_ref 128130 // Administrators
+  simpleclassdiagramsettings end
+  xyz 761 497 2000
+end
+usecasecanvas 128386 usecase_ref 128002 // User Registeion
+  xyzwh 352 98 3005 129 59 label_xy 376 116
+end
+usecasecanvas 128642 usecase_ref 128130 // User Login
+  xyzwh 343 217 3005 127 65 label_xy 378 238
+end
+usecasecanvas 129538 usecase_ref 128258 // Adding Book
+  xyzwh 349 423 3005 125 59 label_xy 379 444
+end
+usecasecanvas 129794 usecase_ref 128386 // Update Book
+  xyzwh 349 333 3005 117 61 label_xy 380 353
+end
+usecasecanvas 129922 usecase_ref 128514 // Removing Book
+  xyzwh 350 518 3005 119 65 label_xy 371 539
+end
+textcanvas 130562 "Libary System
+"
+  xyzwh 375 59 2005 102 13
+usecasecanvas 130690 usecase_ref 128642 // Search Book
+  xyzwh 351 619 3005 141 75 label_xy 390 646
+end
+usecasecanvas 130818 usecase_ref 128770 // Borrow Book
+  xyzwh 353 710 3005 133 69 label_xy 383 736
+end
+usecasecanvas 130946 usecase_ref 128898 // Return Book
+  xyzwh 355 796 3005 129 67 label_xy 384 822
+end
+usecasecanvas 131074 usecase_ref 129026 // Reserve Book
+  xyzwh 362 884 3005 125 79 label_xy 389 915
+end
+line 128514 ----
+  from ref 128130 z 3006 to ref 128386
+line 128770 ----
+  from ref 128130 z 3006 to ref 128642
+simplerelationcanvas 129410 simplerelation_ref 128002
+  from ref 128386 z 3006 stereotype "<<include>>" xyz 380 186 3000 to ref 128642
+end
+line 129666 ----
+  from ref 128258 z 3006 to ref 129538
+line 130050 ----
+  from ref 129794 z 3006 to ref 128258
+line 130178 ----
+  from ref 129922 z 3006 to ref 128258
+simplerelationcanvas 130306 simplerelation_ref 128130
+  decenter_begin 505
+  from ref 129538 z 3006 stereotype "<<include>>" xyz 380 407 3000 to ref 129794
+end
+simplerelationcanvas 130434 simplerelation_ref 128258
+  from ref 129538 z 3006 stereotype "<<include>>" xyz 379 499 3000 to ref 129922
+end
+line 131202 ----
+  from ref 128130 z 3006 to ref 130690
+line 131330 ----
+  from ref 130690 z 3006 to ref 128258
+line 131458 ----
+  from ref 128258 z 3006 to ref 130818
+line 131586 ----
+  from ref 128130 z 3006 to ref 130818
+line 131714 ----
+  from ref 128130 z 3006 to ref 130946
+line 131842 ----
+  from ref 128130 z 3006 to ref 131074
+line 131970 ----
+  from ref 128258 z 3006 to ref 130946
+line 132098 ----
+  from ref 128258 z 3006 to ref 131074
+simplerelationcanvas 133378 simplerelation_ref 128514
+  from ref 128386 z 3006 to point 616 392
+  line 133506 z 3006 stereotype "<<extend>>" xyz 572 506.5 3000 to point 584 622
+  line 133634 z 3006 to ref 130818
+end
+simplerelationcanvas 133762 simplerelation_ref 128642
+  from ref 129538 z 3006 to point 562 497
+  line 134018 z 3006 to point 566 556
+  line 133890 z 3006 stereotype "<<extend>>" xyz 515 601.5 3000 to point 521 649
+  line 134402 z 3006 to ref 130818
+end
+simplerelationcanvas 134146 simplerelation_ref 128770
+  from ref 129538 z 3006 stereotype "<<include>>" xyz 289 501 3000 to point 286 521
+  line 134274 z 3006 to ref 130690
+end
+simplerelationcanvas 134530 simplerelation_ref 128898
+  from ref 128386 z 3006 stereotype "<<include>>" xyz 280 264 3000 to point 227 374
+  line 134658 z 3006 to point 229 761
+  line 134786 z 3006 to ref 130946
+end
+end

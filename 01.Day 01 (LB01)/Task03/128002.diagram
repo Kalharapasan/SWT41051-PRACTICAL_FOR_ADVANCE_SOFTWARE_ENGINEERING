@@ -1,0 +1,97 @@
+format 224
+
+subject 128002 ""
+  xyzwh 175 18 2000 518 609
+textcanvas 128130 "Online_Food_Ordering_System"
+  xyzwh 342 32 2005 158 19
+classcanvas 128258 class_ref 128002 // Customers
+  simpleclassdiagramsettings end
+  xyz 53 296 2000
+end
+classcanvas 128386 class_ref 128130 // Staff
+  simpleclassdiagramsettings end
+  xyz 749.2 222 2000
+end
+usecasecanvas 128514 usecase_ref 128002 // User Login
+  xyzwh 339 75 3005 87 39 label_xy 354 84
+end
+usecasecanvas 128642 usecase_ref 128130 // Browse the menu
+  xyzwh 206.2 184.8 3005 101 51 label_xy 212 201
+end
+usecasecanvas 128770 usecase_ref 128258 // Place Orders
+  xyzwh 242.8 255.2 3005 89 49 label_xy 252 274
+end
+usecasecanvas 128898 usecase_ref 128386 // Make Payment
+  xyzwh 221.6 319.6 3005 91 55 label_xy 230 335
+end
+usecasecanvas 129026 usecase_ref 128514 // Track Oder status
+  xyzwh 223.8 383.2 3005 107 55 label_xy 228 401
+end
+usecasecanvas 129154 usecase_ref 128642 // Cancel Orders
+  xyzwh 238.4 451.6 3005 97 59 label_xy 249 471
+end
+usecasecanvas 129282 usecase_ref 128770 // Notify oder
+  xyzwh 235 550.2 3005 77 39 label_xy 245 561
+end
+usecasecanvas 130434 usecase_ref 128898 // Manage Orders
+  xyzwh 537 160.6 3005 99 49 label_xy 547 174
+end
+usecasecanvas 130562 usecase_ref 129026 // Update Oder Status
+  xyzwh 519 222 3005 121 57 label_xy 535 242
+end
+usecasecanvas 130690 usecase_ref 129154 // Handel cancellations
+  xyzwh 541 321 3005 123 47 label_xy 554 336
+end
+usecasecanvas 132994 usecase_ref 129282 // Staff Login
+  xyzwh 473.6 84.2 3010 81 36 label_xy 480 90
+end
+line 129410 ----
+  from ref 128258 z 3006 to point 215.2 148.8
+  line 132866 z 3006 to ref 128514
+line 129666 ----
+  from ref 128258 z 3006 to ref 128642
+line 129794 ----
+  from ref 128258 z 3006 to ref 128770
+line 129922 ----
+  from ref 128258 z 3006 to ref 129026
+line 130050 ----
+  from ref 128258 z 3006 to ref 128898
+line 130178 ----
+  from ref 128258 z 3006 to ref 129154
+line 130306 ----
+  from ref 128258 z 3006 to ref 129282
+line 130818 ----
+  from ref 130434 z 3006 to ref 128386
+line 130946 ----
+  from ref 130562 z 3006 to ref 128386
+line 131330 ----
+  from ref 130690 z 3006 to ref 128386
+simplerelationcanvas 131458 simplerelation_ref 128002
+  from ref 129026 z 3006 stereotype "<<include>>" xyz 391 330 3000 to ref 130562
+end
+simplerelationcanvas 131586 simplerelation_ref 128130
+  from ref 129282 z 3006 stereotype "<<extend>>" xyz 391 413.5 3000 to ref 130562
+end
+simplerelationcanvas 132098 simplerelation_ref 128386
+  from ref 128770 z 3006 stereotype "<<include>>" xyz 306.5 203.5 3000 to point 372 150
+  line 132226 z 3006 to ref 128514
+end
+simplerelationcanvas 132610 simplerelation_ref 128514
+  from ref 128898 z 3006 stereotype "<<include>>" xyz 351 265.5 3000 to point 454 212
+  line 132738 z 3006 to ref 128514
+end
+line 133122 ----
+  from ref 132994 z 3011 to ref 128386
+simplerelationcanvas 133250 simplerelation_ref 128642
+  from ref 130434 z 3011 stereotype "<<include>>" xyz 516 138 3000 to ref 132994
+end
+simplerelationcanvas 133634 simplerelation_ref 128770
+  from ref 130562 z 3011 stereotype "<<include>>" xyz 481.5 201.5 3000 to point 482.6 183.8
+  line 134146 z 3011 to ref 132994
+end
+simplerelationcanvas 134274 simplerelation_ref 128898
+  from ref 130690 z 3011 to point 525.2 273.8
+  line 134530 z 3011 stereotype "<<include>>" xyz 468 247 3000 to point 468.8 220.2
+  line 134402 z 3011 to ref 132994
+end
+end
