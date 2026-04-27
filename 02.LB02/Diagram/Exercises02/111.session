@@ -1,0 +1,12 @@
+window_sizes 1366 715 320 1041 563 104
+
+diagrams
+  active  usecasediagram_ref 128239 // Hotel Reservation System Use Case Diagram's
+    1041 563 100 A4 0 0
+end
+show_stereotypes
+selected usecasediagram_ref 128239 // Hotel Reservation System Use Case Diagram's
+open
+  usecaseview_ref 128239 // Hotel Reservation System Use Case View
+end
+end

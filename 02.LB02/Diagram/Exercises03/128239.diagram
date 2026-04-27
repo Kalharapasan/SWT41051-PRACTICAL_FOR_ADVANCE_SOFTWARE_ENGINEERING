@@ -1,0 +1,43 @@
+format 224
+
+classcanvas 128111 class_ref 128239 // Customer
+  classdiagramsettings member_max_width 0 end
+  xyzwh 123 257 2000 143 147
+end
+classcanvas 128239 class_ref 128367 // Car
+  classdiagramsettings member_max_width 0 end
+  xyzwh 631 120 2000 147 125
+end
+classcanvas 128367 class_ref 128495 // Rental
+  classdiagramsettings member_max_width 0 end
+  xyzwh 348 53 2000 151 123
+end
+classcanvas 128495 class_ref 128623 // Payment
+  classdiagramsettings member_max_width 0 end
+  xyzwh 399 296 2000 153 125
+end
+classcanvas 128623 class_ref 128751 // Admin
+  classdiagramsettings member_max_width 0 end
+  xyzwh 60 37 2000 149 105
+end
+relationcanvas 128751 relation_ref 128239 // <association>
+  from ref 128111 z 2001 to ref 128367
+  no_role_a no_role_b
+  multiplicity_a_pos 337 172 3000 multiplicity_b_pos 275 257 3000
+end
+relationcanvas 128879 relation_ref 128367 // <association>
+  from ref 128367 z 2001 to ref 128239
+  no_role_a no_role_b
+  multiplicity_a_pos 614 171 3000 multiplicity_b_pos 508 140 3000
+end
+relationcanvas 129007 relation_ref 128495 // <association>
+  from ref 128495 z 2001 to ref 128367
+  no_role_a no_role_b
+  multiplicity_a_pos 420 181 3000 multiplicity_b_pos 444 278 3000
+end
+relationcanvas 129135 relation_ref 128623 // <association>
+  from ref 128623 z 2001 to ref 128111
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

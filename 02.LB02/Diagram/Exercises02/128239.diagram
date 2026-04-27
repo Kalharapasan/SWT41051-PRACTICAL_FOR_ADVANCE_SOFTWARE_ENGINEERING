@@ -1,0 +1,82 @@
+format 224
+
+subject 128111 ""
+  xyzwh 106 9 2000 599 468
+textcanvas 128239 "Hotel Reservation System"
+  xyzwh 345 18 2005 126 46
+classcanvas 128367 class_ref 128239 // Guest
+  simpleclassdiagramsettings end
+  xyz 27 185 2005
+end
+classcanvas 128495 class_ref 128367 // Receptionist
+  simpleclassdiagramsettings end
+  xyz 753 130 2000
+end
+classcanvas 128623 class_ref 128495 // Administrator
+  simpleclassdiagramsettings end
+  xyz 760 340 2000
+end
+usecasecanvas 128751 usecase_ref 128239 // Search Rooms
+  xyzwh 169 49 3005 141 47 label_xy 205 66
+end
+usecasecanvas 128879 usecase_ref 128367 // Make Reservation
+  xyzwh 140 153 3005 129 53 label_xy 160 166
+end
+usecasecanvas 129007 usecase_ref 128495 // Cancel Reservation
+  xyzwh 145 239 3005 127 53 label_xy 160 255
+end
+usecasecanvas 129135 usecase_ref 128623 // View Reservation
+  xyzwh 138 343 3005 151 57 label_xy 175 364
+end
+usecasecanvas 129775 usecase_ref 128751 // Check In
+  xyzwh 501 36 3005 117 51 label_xy 538 54
+end
+usecasecanvas 129903 usecase_ref 128879 // Check Out
+  xyzwh 541 142 3005 127 49 label_xy 576 159
+end
+usecasecanvas 130031 usecase_ref 129007 // Manage Bookings
+  xyzwh 389 91 3005 127 49 label_xy 406 105
+end
+usecasecanvas 130159 usecase_ref 129135 // Handle Payments
+  xyzwh 457 237 3005 117 47 label_xy 477 254
+end
+usecasecanvas 130799 usecase_ref 129263 // Manage System Settings
+  xyzwh 420 307 3005 135 57 label_xy 429 329
+end
+usecasecanvas 130927 usecase_ref 129391 // Manage Users
+  xyzwh 413 388 3005 137 47 label_xy 446 407
+end
+line 129263 ----
+  from ref 128367 z 3006 to ref 128751
+line 129391 ----
+  from ref 128367 z 3006 to ref 128879
+line 129519 ----
+  from ref 128367 z 3006 to ref 129007
+line 129647 ----
+  from ref 128367 z 3006 to ref 129135
+line 130287 ----
+  from ref 129775 z 3006 to ref 128495
+line 130415 ---- decenter_begin 476
+  from ref 129903 z 3006 to ref 128495
+line 130543 ----
+  from ref 130031 z 3006 to ref 128495
+line 130671 ----
+  from ref 130159 z 3006 to point 690 224
+  line 131439 z 3006 to ref 128495
+line 131055 ----
+  from ref 130799 z 3006 to ref 128623
+line 131183 ----
+  from ref 130927 z 3006 to ref 128623
+simplerelationcanvas 131311 simplerelation_ref 128239
+  from ref 128879 z 3006 stereotype "<<include>>" xyz 188 123 3000 to ref 128751
+end
+simplerelationcanvas 131823 simplerelation_ref 128495
+  from ref 129007 z 3006 stereotype "<<extend>>" xyz 177 316 3000 to ref 129135
+end
+simplerelationcanvas 131951 simplerelation_ref 128623
+  from ref 130031 z 3006 stereotype "<<extend>>" xyz 293.5 188 3000 to ref 129007
+end
+simplerelationcanvas 132079 simplerelation_ref 128751
+  from ref 130159 z 3006 stereotype "<<include>>" xyz 524 213 3000 to ref 129903
+end
+end
