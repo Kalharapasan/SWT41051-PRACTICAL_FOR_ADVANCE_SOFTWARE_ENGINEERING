@@ -1,0 +1,19 @@
+window_sizes 1366 715 320 1041 563 104
+
+diagrams
+  active  usecasediagram_ref 128239 // Online Library System Use Case Diagram use case diagram's
+    882 506 100 A4 0 0
+end
+show_stereotypes
+selected usecasediagram_ref 128239 // Online Library System Use Case Diagram use case diagram's
+open
+  usecase_ref 128367 // Search Book
+  usecase_ref 128495 // Borrow Book
+  usecase_ref 128623 // Return Book
+  usecase_ref 128751 // Reserve Book
+  usecase_ref 129007 // Add Book
+  usecase_ref 129135 // Update Book Details
+  usecase_ref 129263 // Remove Book
+  usecase_ref 129391 // Manages book records
+end
+end

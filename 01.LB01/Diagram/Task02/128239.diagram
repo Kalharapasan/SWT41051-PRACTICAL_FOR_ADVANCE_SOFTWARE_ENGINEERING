@@ -1,0 +1,76 @@
+format 224
+
+subject 128111 ""
+  xyzwh 183 10 2000 466 520
+textcanvas 128239 "Online Food Ordering System "
+  xyzwh 330 28 2005 143 13
+classcanvas 128367 class_ref 128239 // Customer
+  simpleclassdiagramsettings end
+  xyz 61 221 2000
+end
+classcanvas 128495 class_ref 128367 // Restaurant
+  simpleclassdiagramsettings end
+  xyz 722 202 2000
+end
+usecasecanvas 128623 usecase_ref 128239 // Browse Menu
+  xyzwh 222 54 3005 119 47 label_xy 247 66
+end
+usecasecanvas 128751 usecase_ref 128367 // Place Order
+  xyzwh 233 112 3005 123 57 label_xy 263 134
+end
+usecasecanvas 128879 usecase_ref 128495 // Make Payment
+  xyzwh 199 214 3005 119 49 label_xy 220 232
+end
+usecasecanvas 129007 usecase_ref 128623 // Track Order
+  xyzwh 219 275 3005 113 55 label_xy 246 290
+end
+usecasecanvas 129135 usecase_ref 128751 // Cancel Order
+  xyzwh 295 345 3005 115 53 label_xy 319 363
+end
+usecasecanvas 129263 usecase_ref 128879 // Receive Notification
+  xyzwh 322 433 3005 111 49 label_xy 327 452
+end
+usecasecanvas 129391 usecase_ref 129007 // Manage Orders
+  xyzwh 481 84 3005 129 45 label_xy 505 100
+end
+usecasecanvas 129519 usecase_ref 129135 // Update Order Status
+  xyzwh 493 202 3005 123 49 label_xy 502 219
+end
+usecasecanvas 129647 usecase_ref 129263 // Handle Cancellation
+  xyzwh 488 303 3005 121 59 label_xy 501 326
+end
+line 129775 ----
+  from ref 128367 z 3006 to ref 128623
+line 129903 ----
+  from ref 128367 z 3006 to ref 128751
+line 130031 ----
+  from ref 128367 z 3006 to ref 128879
+line 130159 ----
+  from ref 128367 z 3006 to ref 129007
+line 130415 ----
+  from ref 128367 z 3006 to point 200 335
+  line 131311 z 3006 to ref 129135
+line 130543 ----
+  from ref 128367 z 3006 to point 186 417
+  line 131695 z 3006 to ref 129263
+line 130671 ----
+  from ref 128495 z 3006 to ref 129391
+line 130799 ----
+  from ref 128495 z 3006 to ref 129519
+line 130927 ----
+  from ref 128495 z 3006 to ref 129647
+simplerelationcanvas 131055 simplerelation_ref 128239
+  from ref 128879 z 3006 stereotype "<<include>>" xyz 242 190.5 3000 to ref 128751
+end
+simplerelationcanvas 131183 simplerelation_ref 128367
+  from ref 129519 z 3006 stereotype "<<include>>" xyz 516 164 3000 to ref 129391
+end
+simplerelationcanvas 131439 simplerelation_ref 128495
+  from ref 129135 z 3006 stereotype "<<extend>>" xyz 334.5 309.5 3000 to point 375 273
+  line 131567 z 3006 to ref 128751
+end
+simplerelationcanvas 131823 simplerelation_ref 128623
+  from ref 129263 z 3006 stereotype "<<extend>>" xyz 413.5 359.5 3000 to point 499 286
+  line 132079 z 3006 to ref 129519
+end
+end
