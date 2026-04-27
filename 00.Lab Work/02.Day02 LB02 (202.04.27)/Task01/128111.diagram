@@ -1,0 +1,16 @@
+format 224
+
+classcanvas 128111 class_ref 128111 // Srudents
+  classdiagramsettings member_max_width 0 end
+  xyzwh 112 49 2000 205 167
+end
+classcanvas 128239 class_ref 128239 // Lecturer
+  classdiagramsettings member_max_width 0 end
+  xyzwh 511 48 2000 249 167
+end
+relationcanvas 128623 relation_ref 128111 // <association>
+  from ref 128111 z 2001 to ref 128239
+  no_role_a no_role_b
+  multiplicity_a_pos 480 137 3000 multiplicity_b_pos 326 137 3000
+end
+end

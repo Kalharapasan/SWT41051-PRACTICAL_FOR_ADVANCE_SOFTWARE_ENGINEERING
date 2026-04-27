@@ -1,0 +1,30 @@
+format 224
+
+classcanvas 128111 class_ref 128239 // Library
+  classdiagramsettings member_max_width 0 end
+  xyzwh 52 154 2000 151 139
+end
+classcanvas 128239 class_ref 128367 // Book
+  classdiagramsettings member_max_width 0 end
+  xyzwh 382 32 2000 159 143
+end
+classcanvas 128367 class_ref 128495 // Patron
+  classdiagramsettings member_max_width 0 end
+  xyzwh 648 222 2000 157 147
+end
+relationcanvas 128495 relation_ref 128239 // <association>
+  from ref 128111 z 2001 to ref 128239
+  no_role_a no_role_b
+  multiplicity_a_pos 351 131 3000 multiplicity_b_pos 212 197 3000
+end
+relationcanvas 128623 relation_ref 128367 // <association>
+  from ref 128239 z 2001 to ref 128367
+  no_role_a no_role_b
+  multiplicity_a_pos 617 250 3000 multiplicity_b_pos 550 173 3000
+end
+relationcanvas 128751 relation_ref 128495 // <association>
+  from ref 128111 z 2001 to ref 128367
+  no_role_a no_role_b
+  multiplicity_a_pos 631 292 3000 multiplicity_b_pos 212 239 3000
+end
+end

@@ -1,0 +1,39 @@
+format 224
+
+classcanvas 128111 class_ref 128239 // Customer
+  classdiagramsettings member_max_width 0 end
+  xyzwh 49 159 2000 147 137
+end
+classcanvas 128239 class_ref 128367 // Product
+  classdiagramsettings member_max_width 0 end
+  xyzwh 416 35 2000 167 123
+end
+classcanvas 128367 class_ref 128495 // Order
+  classdiagramsettings member_max_width 0 end
+  xyzwh 373 309 2000 159 117
+end
+classcanvas 128495 class_ref 128623 // Payment
+  classdiagramsettings member_max_width 0 end
+  xyzwh 627 273 2005 167 153
+end
+relationcanvas 128623 relation_ref 128239 // <association>
+  from ref 128111 z 2001 to ref 128367
+  no_role_a no_role_b
+  multiplicity_a_pos 342 342 3000 multiplicity_b_pos 205 268 3000
+end
+relationcanvas 128751 relation_ref 128367 // <association>
+  from ref 128367 z 2001 to ref 128239
+  no_role_a no_role_b
+  multiplicity_a_pos 455 163 3000 multiplicity_b_pos 431 291 3000
+end
+relationcanvas 129007 relation_ref 128495 // <association>
+  from ref 128367 z 2006 to ref 128495
+  no_role_a no_role_b
+  multiplicity_a_pos 610 360 3000 multiplicity_b_pos 541 367 3000
+end
+relationcanvas 129135 relation_ref 128623 // <association>
+  from ref 128111 z 2001 to ref 128239
+  no_role_a no_role_b
+  multiplicity_a_pos 399 126 3000 multiplicity_b_pos 205 203 3000
+end
+end
