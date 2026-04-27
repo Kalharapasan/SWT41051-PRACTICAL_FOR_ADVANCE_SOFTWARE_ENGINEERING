@@ -1,0 +1,12 @@
+window_sizes 1366 715 320 1041 565 104
+
+diagrams
+  active  usecasediagram_ref 128111 // online_banking_system_use_case_diagram
+    1041 563 90 A4 48 0
+end
+show_stereotypes
+selected usecasediagram_ref 128111 // online_banking_system_use_case_diagram
+open
+  usecaseview_ref 128111 // online_banking_system_use_case_view's
+end
+end
