@@ -1,0 +1,121 @@
+format 224
+
+subject 128111 ""
+  xyzwh 154 14 2000 529 492
+textcanvas 128239 "Online Banking System"
+  xyzwh 357 28 2005 108 13
+classcanvas 128367 class_ref 128239 // Customer
+  simpleclassdiagramsettings end
+  xyz 36 182 2000
+end
+classcanvas 128495 class_ref 128367 // Bank_Staff
+  simpleclassdiagramsettings end
+  xyz 752 58 2000
+end
+classcanvas 128623 class_ref 128495 // System_Administrato
+  simpleclassdiagramsettings end
+  xyz 719 399 2000
+end
+usecasecanvas 128751 usecase_ref 128239 // Register Account
+  xyzwh -145 17 3005 64 32 label_xy -154 49
+end
+usecasecanvas 128879 usecase_ref 128239 // Register Account
+  xyzwh 248 62 3005 143 55 label_xy 276 79
+end
+usecasecanvas 129007 usecase_ref 128367 // Login
+  xyzwh 194 157 3005 143 47 label_xy 249 171
+end
+usecasecanvas 129135 usecase_ref 128495 // View Account Details
+  xyzwh 162 235 3005 129 59 label_xy 175 258
+end
+usecasecanvas 129263 usecase_ref 128623 // Transfer Money
+  xyzwh 180 319 3005 139 49 label_xy 205 334
+end
+usecasecanvas 129391 usecase_ref 128751 // Pay Bills
+  xyzwh 205 380 3005 147 51 label_xy 257 397
+end
+usecasecanvas 129519 usecase_ref 128879 // View Transaction History
+  xyzwh 273 450 3005 145 49 label_xy 284 467
+end
+usecasecanvas 130799 usecase_ref 129007 // Bank Staff Login
+  xyzwh 427 56 3005 147 57 label_xy 458 75
+end
+usecasecanvas 130927 usecase_ref 129135 // Manage Account
+  xyzwh 495 137 3005 119 57 label_xy 517 156
+end
+usecasecanvas 131055 usecase_ref 129263 // Monitor Transactions
+  xyzwh 508 219 3005 121 49 label_xy 516 234
+end
+usecasecanvas 131183 usecase_ref 129391 // Generate Reports
+  xyzwh 535 299 3005 115 59 label_xy 546 317
+end
+usecasecanvas 131311 usecase_ref 129519 // Manage Users
+  xyzwh 538 435 3005 117 59 label_xy 562 457
+end
+usecasecanvas 131439 usecase_ref 129647 // Administrator Login
+  xyzwh 437 360 3005 123 55 label_xy 451 378
+end
+line 129647 ----
+  from ref 128367 z 3006 to point 140 116
+  line 130671 z 3006 to ref 128879
+line 129775 ----
+  from ref 128367 z 3006 to ref 129007
+line 129903 ----
+  from ref 128367 z 3006 to ref 129135
+line 130031 ----
+  from ref 128367 z 3006 to ref 129263
+line 130159 ----
+  from ref 128367 z 3006 to point 122 397
+  line 130543 z 3006 to ref 129391
+line 130287 ----
+  from ref 128367 z 3006 to point 93 454
+  line 130415 z 3006 to ref 129519
+line 131567 ----
+  from ref 130799 z 3006 to ref 128495
+line 131695 ----
+  from ref 130927 z 3006 to ref 128495
+line 132207 ----
+  from ref 131055 z 3006 to ref 128495
+line 132335 ----
+  from ref 131183 z 3006 to point 743 207
+  line 132463 z 3006 to ref 128495
+line 132591 ----
+  from ref 131439 z 3006 to ref 128623
+line 132719 ----
+  from ref 131311 z 3006 to ref 128623
+simplerelationcanvas 132847 simplerelation_ref 128239
+  from ref 131311 z 3006 stereotype "<<include>>" xyz 514 424 3000 to ref 131439
+end
+simplerelationcanvas 132975 simplerelation_ref 128367
+  from ref 130927 z 3006 stereotype "<<include>>" xyz 494 124 3000 to ref 130799
+end
+simplerelationcanvas 133103 simplerelation_ref 128495
+  from ref 131055 z 3006 stereotype "<<include>>" xyz 451 206 3000 to point 454 193
+  line 133231 z 3006 to ref 130799
+end
+simplerelationcanvas 133359 simplerelation_ref 128623
+  from ref 131183 z 3006 stereotype "<<include>>" xyz 453 263 3000 to point 425 226
+  line 133487 z 3006 to ref 130799
+end
+simplerelationcanvas 133615 simplerelation_ref 128751
+  from ref 129007 z 3006 stereotype "<<extend>>" xyz 256 136 3000 to ref 128879
+end
+simplerelationcanvas 133743 simplerelation_ref 128879
+  from ref 129135 z 3006 stereotype "<<include>>" xyz 211.5 218.5 3000 to ref 129007
+end
+simplerelationcanvas 133871 simplerelation_ref 129007
+  from ref 129263 z 3006 stereotype "<<include>>" xyz 265 295 3000 to point 320 270
+  line 133999 z 3006 to ref 129007
+end
+simplerelationcanvas 134127 simplerelation_ref 129135
+  from ref 129391 z 3006 stereotype "<<include>>" xyz 298 331 3000 to point 365 282
+  line 134255 z 3006 to ref 129007
+end
+simplerelationcanvas 134383 simplerelation_ref 129263
+  from ref 129519 z 3006 stereotype "<<include>>" xyz 351.5 375 3000 to point 412 299
+  line 134511 z 3006 to ref 129007
+end
+simplerelationcanvas 134639 simplerelation_ref 129391
+  from ref 131183 z 3006 stereotype "<<extend>>" xyz 545 282 3000 to ref 131055
+end
+end

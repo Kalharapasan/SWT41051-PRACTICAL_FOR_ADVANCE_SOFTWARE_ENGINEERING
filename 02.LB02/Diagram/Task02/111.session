@@ -1,0 +1,12 @@
+window_sizes 1366 715 320 1041 563 104
+
+diagrams
+  active  usecasediagram_ref 128239 // Online Banking System Use Case Diagram's
+    1041 563 100 A4 12 0
+end
+show_stereotypes
+selected usecase_ref 128239 // Register Account
+open
+  usecaseview_ref 128239 // Online Banking System Use case View
+end
+end

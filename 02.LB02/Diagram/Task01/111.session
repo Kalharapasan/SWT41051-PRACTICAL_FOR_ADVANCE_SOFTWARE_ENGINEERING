@@ -1,0 +1,14 @@
+window_sizes 1366 715 320 1041 563 104
+
+diagrams
+  active  classdiagram_ref 128239 // Library Management System Class Diagram's
+    1041 563 100 A4 0 0
+end
+show_stereotypes
+selected operation_ref 129135 // returnBook
+open
+  class_ref 128239 // Library
+  class_ref 128367 // Book
+  class_ref 128495 // Patron
+end
+end
