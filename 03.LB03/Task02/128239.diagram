@@ -1,0 +1,174 @@
+format 224
+
+classinstance 128111 class_ref 128239 // User
+  name ""   xyz 29.3 7.9 2000 life_line_z 2000
+classinstance 128239 class_ref 128367 // UI
+  name ""   xyz 190.4 6.8 2000 life_line_z 2000
+classinstance 128367 class_ref 128495 // Shopping_Cart
+  name ""   xyz 344.7 7.9 2005 life_line_z 2000
+classinstance 128495 class_ref 128623 // Payment_Gateway
+  name ""   xyz 523.6 4.6 2000 life_line_z 2000
+classinstance 128623 class_ref 128751 // Order_System
+  name ""   xyz 729.1 4.6 2000 life_line_z 2000
+durationcanvas 128751 classinstance_ref 128111 // :User
+  xyzwh 48 87.9 2010 11 305
+end
+durationcanvas 128879 classinstance_ref 128239 // :UI
+  xyzwh 209 88.8 2010 11 480
+  overlappingdurationcanvas 129647
+    xyzwh 215 185.7 2020 11 25
+  end
+  overlappingdurationcanvas 130415
+    xyzwh 215 325.7 2020 11 25
+  end
+  overlappingdurationcanvas 130671
+    xyzwh 215 358 2020 11 25
+  end
+end
+durationcanvas 129135 classinstance_ref 128367 // :Shopping_Cart
+  xyzwh 382 115.3 2010 11 37
+end
+durationcanvas 129903 classinstance_ref 128367 // :Shopping_Cart
+  xyzwh 382 228 2010 11 45
+end
+durationcanvas 130927 classinstance_ref 128495 // :Payment_Gateway
+  xyzwh 571 415.1 2010 11 93
+  overlappingdurationcanvas 131439
+    xyzwh 577 438 2020 11 25
+  end
+end
+durationcanvas 131823 classinstance_ref 128623 // :Order_System
+  xyzwh 766 513.9 2010 11 264
+  overlappingdurationcanvas 132335
+    xyzwh 772 517.9 2020 11 25
+  end
+end
+durationcanvas 132591 classinstance_ref 128367 // :Shopping_Cart
+  xyzwh 382 595.3 2010 11 77
+end
+durationcanvas 132975 classinstance_ref 128239 // :UI
+  xyzwh 209 687.2 2010 11 51
+end
+durationcanvas 133231 classinstance_ref 128111 // :User
+  xyzwh 48 710.7 2010 11 75
+end
+msg 129007 synchronous
+  from durationcanvas_ref 128751
+  to durationcanvas_ref 128879
+  yz 96 2015 explicitmsg "Select item"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 108 83
+msg 129263 synchronous
+  from durationcanvas_ref 128879
+  to durationcanvas_ref 129135
+  yz 123 2015 explicitmsg "Add to cart"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 274 110
+msg 129391 return
+  from durationcanvas_ref 129135
+  to durationcanvas_ref 128879
+  yz 141 2015 explicitmsg "Cart updated"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 269 128
+msg 129519 return
+  from durationcanvas_ref 128879
+  to durationcanvas_ref 128751
+  yz 166 2020 explicitmsg "Show cart"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 110 153
+msg 129775 synchronous
+  from durationcanvas_ref 128751
+  to durationcanvas_ref 129647
+  yz 190 2025 explicitmsg "Proceed to checkou"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "Proceed to checkou"
+  label_xy 90 177
+msg 130031 synchronous
+  from durationcanvas_ref 128879
+  to durationcanvas_ref 129903
+  yz 234 2015 explicitmsg "Fetch cart"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 277 221
+msg 130159 return
+  from durationcanvas_ref 129903
+  to durationcanvas_ref 128879
+  yz 261 2015 explicitmsg "Items + totals"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 267 248
+msg 130287 return
+  from durationcanvas_ref 128879
+  to durationcanvas_ref 128751
+  yz 288 2015 explicitmsg "Show checkout form"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 85 266
+msg 130543 synchronous
+  from durationcanvas_ref 128751
+  to durationcanvas_ref 130415
+  yz 326 2025 explicitmsg "Enter shipping"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 103 313
+msg 130799 synchronous
+  from durationcanvas_ref 128751
+  to durationcanvas_ref 130671
+  yz 358 2025 explicitmsg "Enter payment info"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 91 345
+msg 131055 synchronous
+  from durationcanvas_ref 128879
+  to durationcanvas_ref 130927
+  yz 415 2015 explicitmsg "Submit payment"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 357 402
+reflexivemsg 131567 synchronous
+  to durationcanvas_ref 131439
+  yz 438 2025 explicitmsg "Validate card"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 567 425
+msg 131695 return
+  from durationcanvas_ref 130927
+  to durationcanvas_ref 128879
+  yz 487 2015 explicitmsg "Payment approved"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 350 474
+msg 131951 synchronous
+  from durationcanvas_ref 128879
+  to durationcanvas_ref 131823
+  yz 550 2015 explicitmsg "Create order"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 467 537
+reflexivemsg 132463 asynchronous
+  to durationcanvas_ref 132335
+  yz 582 2025 explicitmsg "Reser"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 801 526
+msg 132719 synchronous
+  from durationcanvas_ref 131823
+  to durationcanvas_ref 132591
+  yz 599 2015 explicitmsg "Clear cart"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 561 586
+msg 132847 return
+  from durationcanvas_ref 132591
+  to durationcanvas_ref 131823
+  yz 635 2015 explicitmsg "Cart cleared"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 555 622
+msg 133103 return
+  from durationcanvas_ref 131823
+  to durationcanvas_ref 132975
+  yz 688 2015 explicitmsg "Order ID + summary"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 449 675
+msg 133359 return
+  from durationcanvas_ref 132975
+  to durationcanvas_ref 133231
+  yz 710 2015 explicitmsg "Order confirmed"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 95 697
+msg 133487 return
+  from durationcanvas_ref 131823
+  to durationcanvas_ref 133231
+  yz 764 2015 explicitmsg "Email confirmation"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 369 751
+end

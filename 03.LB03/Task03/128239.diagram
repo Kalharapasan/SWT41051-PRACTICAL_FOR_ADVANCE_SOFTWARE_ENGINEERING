@@ -1,0 +1,235 @@
+format 224
+
+activitynodecanvas 128111 activitynode_ref 128239 // initial_node
+  xyz 74 16 2000
+end
+activityactioncanvas 128239 activityaction_ref 128239 // activity action Browse and add items
+Items placed in cart
+  
+  show_opaque_action_definition default
+  xyzwh 19 65 2000 144 47
+end
+activityactioncanvas 128367 activityaction_ref 128367 // activity action Initiate checkout
+  
+  show_opaque_action_definition default
+  xyzwh 37 143 2000 106 41
+end
+activityactioncanvas 128495 activityaction_ref 128495 // activity action Review cart contents
+Confirm items and quantities
+  
+  show_opaque_action_definition default
+  xyzwh 16 214 2000 159 43
+end
+activitynodecanvas 129007 activitynode_ref 128367 // decision
+  xyz 72 294 2000
+end
+textcanvas 129135 "Apply coupon?"
+  xyzwh 100 285 2005 70 13
+activityactioncanvas 129263 activityaction_ref 128623 // activity action Validate coupon code
+Apply discount to tota
+  
+  show_opaque_action_definition default
+  xyzwh 189 295 2000 133 40
+end
+activityactioncanvas 129391 activityaction_ref 128751 // activity action Enter shipping info
+Delivery address details
+  
+  show_opaque_action_definition default
+  xyzwh 44 359 2000 133 43
+end
+activitynodecanvas 131055 activitynode_ref 128623 // decision
+  xyz 80 437 2000
+end
+textcanvas 131183 "Alt shipping options?"
+  xyzwh 105 424 2000 98 13
+activityactioncanvas 131951 activityaction_ref 129007 // activity action Display shipping options
+Cost and delivery estimates
+  
+  show_opaque_action_definition default
+  xyzwh 159 440 2000 155 40
+end
+activityactioncanvas 132079 activityaction_ref 129135 // activity action Select shipping option
+  
+  show_opaque_action_definition default
+  xyzwh 43 500 2000 135 40
+end
+activityactioncanvas 132975 activityaction_ref 129263 // activity action Enter payment details
+Secure payment form
+  
+  show_opaque_action_definition default
+  xyzwh 49 567 2000 128 40
+end
+activityactioncanvas 133231 activityaction_ref 129391 // activity action Verify with payment gateway
+Funds and authorisation check
+  
+  show_opaque_action_definition default
+  xyzwh 232 567 2000 174 40
+end
+activitynodecanvas 133743 activitynode_ref 128751 // decision
+  xyz 304 635 2000
+end
+textcanvas 133871 "Payment approved?"
+  xyzwh 207 635 2000 96 13
+activityactioncanvas 135663 activityaction_ref 129519 // activity action Process order Create order record
+  
+  show_opaque_action_definition default
+  xyzwh 264 692 2000 145 40
+end
+activityactioncanvas 135919 activityaction_ref 129647 // activity action Order record saved
+  
+  show_opaque_action_definition default
+  xyzwh 270 749 2000 138 40
+end
+activityactioncanvas 136303 activityaction_ref 129775 // activity action Inventory levels updated
+  
+  show_opaque_action_definition default
+  xyzwh 278 811 2000 132 40
+end
+activityactioncanvas 136431 activityaction_ref 129903 // activity action Warehouse notified
+  
+  show_opaque_action_definition default
+  xyzwh 279 876 2000 133 40
+end
+activityactioncanvas 136559 activityaction_ref 130031 // activity action Generate confirmation email
+  
+  show_opaque_action_definition default
+  xyzwh 281 939 2005 133 40
+end
+activityactioncanvas 136687 activityaction_ref 130159 // activity action Receive confirmation
+  
+  show_opaque_action_definition default
+  xyzwh 68 936 2000 147 40
+end
+activitynodecanvas 136815 activitynode_ref 128879 // activity_final
+  xyz 122 1008 2000
+end
+flowcanvas 128623 flow_ref 128239 // <flow>
+  decenter_end 458
+  
+  from ref 128111 z 2001 to ref 128239
+   write_horizontally default
+end
+flowcanvas 128751 flow_ref 128367 // <flow>
+  
+  from ref 128239 z 2001 to ref 128367
+   write_horizontally default
+end
+flowcanvas 128879 flow_ref 128495 // <flow>
+  decenter_end 470
+  
+  from ref 128367 z 2001 to ref 128495
+   write_horizontally default
+end
+flowcanvas 129519 flow_ref 128623 // <flow>
+  decenter_begin 421
+  
+  from ref 128495 z 2001 to ref 129007
+   write_horizontally default
+end
+flowcanvas 129647 flow_ref 128751 // Yes
+  
+  from ref 129007 z 2001 label "Yes" xyz 134 316 3000 to ref 129263
+   write_horizontally default
+end
+flowcanvas 130287 flow_ref 128879 // No
+  decenter_begin 519
+  decenter_end 314
+  
+  from ref 129007 z 2001 label "No" xyz 90 339 3000 to ref 129391
+   write_horizontally default
+end
+flowcanvas 131311 flow_ref 129263 // <flow>
+  decenter_begin 375
+  
+  from ref 129391 z 2001 to ref 131055
+   write_horizontally default
+end
+flowcanvas 131695 flow_ref 129519 // <flow>
+  
+  from ref 129263 z 2001 to point 248 379
+  line 131823 z 2001 to ref 129391
+   write_horizontally default
+end
+flowcanvas 132463 flow_ref 129647 // No
+  decenter_begin 519
+  decenter_end 361
+  
+  from ref 131055 z 2001 label "No" xyz 95 476 3000 to ref 132079
+   write_horizontally default
+end
+flowcanvas 132591 flow_ref 129775 // <flow>
+  
+  from ref 131951 z 2001 to point 233 519
+  line 132719 z 2001 to ref 132079
+   write_horizontally default
+end
+flowcanvas 132847 flow_ref 129903 // Yes
+  decenter_begin 513
+  
+  from ref 131055 z 2001 label "Yes" xyz 120 459 3000 to ref 131951
+   write_horizontally default
+end
+flowcanvas 133103 flow_ref 130031 // <flow>
+  
+  from ref 132079 z 2001 to ref 132975
+   write_horizontally default
+end
+flowcanvas 133615 flow_ref 130159 // <flow>
+  
+  from ref 132975 z 2001 to ref 133231
+   write_horizontally default
+end
+flowcanvas 135151 flow_ref 130799 // No
+  
+  from ref 133743 z 2001 label "No" xyz 388 635 3000 to point 450 650
+  line 135279 z 2001 to point 451 582
+  line 135407 z 2001 to ref 133231
+   write_horizontally default
+end
+flowcanvas 135535 flow_ref 130927 // <flow>
+  
+  from ref 133231 z 2001 to ref 133743
+   write_horizontally default
+end
+flowcanvas 135791 flow_ref 131055 // Yes
+  decenter_begin 639
+  decenter_end 393
+  
+  from ref 133743 z 2001 label "Yes" xyz 323 670 3000 to ref 135663
+   write_horizontally default
+end
+flowcanvas 136047 flow_ref 131183 // <flow>
+  decenter_begin 448
+  
+  from ref 135663 z 2006 to point 326 745
+  line 136175 z 2006 to ref 135919
+   write_horizontally default
+end
+flowcanvas 136943 flow_ref 131311 // <flow>
+  decenter_end 476
+  
+  from ref 135919 z 2001 to ref 136303
+   write_horizontally default
+end
+flowcanvas 137071 flow_ref 131439 // <flow>
+  
+  from ref 136303 z 2001 to ref 136431
+   write_horizontally default
+end
+flowcanvas 137455 flow_ref 131567 // <flow>
+  
+  from ref 136431 z 2006 to ref 136559
+   write_horizontally default
+end
+flowcanvas 137583 flow_ref 131695 // <flow>
+  
+  from ref 136559 z 2006 to ref 136687
+   write_horizontally default
+end
+flowcanvas 137711 flow_ref 131823 // <flow>
+  decenter_begin 442
+  
+  from ref 136687 z 2001 to ref 136815
+   write_horizontally default
+end
+end

@@ -1,0 +1,12 @@
+window_sizes 1366 715 313 1048 667 0
+
+diagrams
+  active  sequencediagram_ref 128239 // Online_Store_Squence_Diagram
+    1048 667 110 A4 360 0
+end
+show_stereotypes
+selected sequencediagram_ref 128239 // Online_Store_Squence_Diagram
+open
+  classview_ref 128239 // Online_Store_Class_View
+end
+end

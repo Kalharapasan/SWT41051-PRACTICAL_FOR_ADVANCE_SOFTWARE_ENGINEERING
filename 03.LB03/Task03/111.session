@@ -1,0 +1,12 @@
+window_sizes 1366 715 313 1048 667 0
+
+diagrams
+  active  activitydiagram_ref 128239 // Online_Checkout_Journey_Activity_Diagram's
+    1048 667 100 A4 504 0
+end
+show_stereotypes
+selected activitydiagram_ref 128239 // Online_Checkout_Journey_Activity_Diagram's
+open
+  activity_ref 128239 // Online_Checkout_Journey_Activity's
+end
+end

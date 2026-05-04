@@ -1,0 +1,260 @@
+format 224
+"Online_Checkout_Journey_Packae's" // Online_Checkout_Journey_Packae's
+  revision 1
+  modified_by 111 "Kalhara"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 128239 "Online_Checkout_Journey_Class_View"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    activity 128239 "Online_Checkout_Journey_Activity's"
+      activitydiagram 128239 "Online_Checkout_Journey_Activity_Diagram's"
+	activitydiagramsettings draw_all_relations no
+	 end
+	size A4
+      end
+
+      activitynode 128239 initial_node ""
+	flow 128239 "<flow>"
+	  on activityaction_ref 128239 // activity action Browse and add items
+Items placed in cart
+	end
+      end
+
+      activityaction 128239 "Browse and add items
+Items placed in cart"
+	opaque_action
+	flow 128367 "<flow>"
+	  on activityaction_ref 128367 // activity action Initiate checkout
+	end
+      end
+
+      activityaction 128367 "Initiate checkout"
+	opaque_action
+	flow 128495 "<flow>"
+	  on activityaction_ref 128495 // activity action Review cart contents
+Confirm items and quantities
+	end
+      end
+
+      activityaction 128495 "Review cart contents
+Confirm items and quantities"
+	opaque_action
+	flow 128623 "<flow>"
+	  on activitynode_ref 128367 // decision
+	end
+      end
+
+      activitynode 128367 decision ""
+	flow 128751 "Yes"
+	  on activityaction_ref 128623 // activity action Validate coupon code
+Apply discount to tota
+	end
+
+	flow 128879 "No"
+	  on activityaction_ref 128751 // activity action Enter shipping info
+Delivery address details
+	end
+      end
+
+      activityaction 128623 "Validate coupon code
+Apply discount to tota"
+	opaque_action
+	flow 129135 "<flow>"
+	  on activitynode_ref 128495 // merge
+	end
+
+	flow 129391 "<flow>"
+	  on activitynode_ref 128623 // decision
+	end
+
+	flow 129519 "<flow>"
+	  on activityaction_ref 128751 // activity action Enter shipping info
+Delivery address details
+	end
+      end
+
+      activityaction 128751 "Enter shipping info
+Delivery address details"
+	opaque_action
+	flow 129007 "<flow>"
+	  on activitynode_ref 128495 // merge
+	end
+
+	flow 129263 "<flow>"
+	  on activitynode_ref 128623 // decision
+	end
+      end
+
+      activitynode 128495 merge ""
+      end
+
+      activityaction 128879 "Alt shipping
+options?"
+	opaque_action
+      end
+
+      activitynode 128623 decision ""
+	flow 129647 "No"
+	  on activityaction_ref 129135 // activity action Select shipping option
+	end
+
+	flow 129903 "Yes"
+	  on activityaction_ref 129007 // activity action Display shipping options
+Cost and delivery estimates
+	end
+      end
+
+      activityaction 129007 "Display shipping options
+Cost and delivery estimates"
+	opaque_action
+	flow 129775 "<flow>"
+	  on activityaction_ref 129135 // activity action Select shipping option
+	end
+      end
+
+      activityaction 129135 "Select shipping option"
+	opaque_action
+	flow 130031 "<flow>"
+	  on activityaction_ref 129263 // activity action Enter payment details
+Secure payment form
+	end
+      end
+
+      activityaction 129263 "Enter payment details
+Secure payment form"
+	opaque_action
+	flow 130159 "<flow>"
+	  on activityaction_ref 129391 // activity action Verify with payment gateway
+Funds and authorisation check
+	end
+      end
+
+      activityaction 129391 "Verify with payment gateway
+Funds and authorisation check"
+	opaque_action
+	flow 130287 "<flow>"
+	  on activitynode_ref 128751 // decision
+	end
+
+	flow 130927 "<flow>"
+	  on activitynode_ref 128751 // decision
+	end
+      end
+
+      activitynode 128751 decision ""
+	flow 130415 "<flow>"
+	  on activityaction_ref 129391 // activity action Verify with payment gateway
+Funds and authorisation check
+	end
+
+	flow 130543 "<flow>"
+	  on activityaction_ref 129391 // activity action Verify with payment gateway
+Funds and authorisation check
+	end
+
+	flow 130671 "<flow>"
+	  on activityaction_ref 129391 // activity action Verify with payment gateway
+Funds and authorisation check
+	end
+
+	flow 130799 "No"
+	  on activityaction_ref 129391 // activity action Verify with payment gateway
+Funds and authorisation check
+	end
+
+	flow 131055 "Yes"
+	  on activityaction_ref 129519 // activity action Process order Create order record
+	end
+      end
+
+      activityaction 129519 "Process order Create order record"
+	opaque_action
+	flow 131183 "<flow>"
+	  on activityaction_ref 129647 // activity action Order record saved
+	end
+      end
+
+      activityaction 129647 "Order record saved"
+	opaque_action
+	flow 131311 "<flow>"
+	  on activityaction_ref 129775 // activity action Inventory levels updated
+	end
+      end
+
+      activityaction 129775 "Inventory levels updated"
+	opaque_action
+	flow 131439 "<flow>"
+	  on activityaction_ref 129903 // activity action Warehouse notified
+	end
+      end
+
+      activityaction 129903 "Warehouse notified"
+	opaque_action
+	flow 131567 "<flow>"
+	  on activityaction_ref 130031 // activity action Generate confirmation email
+	end
+      end
+
+      activityaction 130031 "Generate confirmation email"
+	opaque_action
+	flow 131695 "<flow>"
+	  on activityaction_ref 130159 // activity action Receive confirmation
+	end
+      end
+
+      activityaction 130159 "Receive confirmation"
+	opaque_action
+	flow 131823 "<flow>"
+	  on activitynode_ref 128879 // activity_final
+	end
+      end
+
+      activitynode 128879 activity_final ""
+      end
+    end
+  end
+end

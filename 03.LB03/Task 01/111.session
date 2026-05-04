@@ -1,0 +1,14 @@
+window_sizes 1366 715 313 1048 667 0
+
+diagrams
+  activitydiagram_ref 128111 // ATM_Activity_Diagram's
+    838 450 100 A4 0 0
+  active  sequencediagram_ref 128239 // ATM_Sequence_Diaram's
+    1048 667 80 A4 12 0
+end
+show_stereotypes
+selected sequencediagram_ref 128239 // ATM_Sequence_Diaram's
+open
+  classview_ref 128111 // ATM_Class_View's
+end
+end
