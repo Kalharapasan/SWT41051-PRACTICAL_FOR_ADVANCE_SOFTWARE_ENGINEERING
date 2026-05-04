@@ -1,0 +1,192 @@
+format 224
+
+classinstance 128111 class_ref 128239 // User
+  name ""   xyz 81 41 2000 life_line_z 2000
+classinstance 128239 class_ref 128367 // ATM
+  name ""   xyz 225 43 2000 life_line_z 2000
+classinstance 128367 class_ref 128495 // BankDatabases
+  name ""   xyz 381 42 2000 life_line_z 2000
+classinstance 128495 class_ref 128623 // CashDispenser
+  name ""   xyz 581 41 2000 life_line_z 2000
+fragment 131055 "alt"
+  xyzwh 61 444 2005 473 361
+  separator 3917
+end
+durationcanvas 128623 classinstance_ref 128111 // :User
+  xyzwh 100 114 2010 11 97
+  overlappingdurationcanvas 129007
+    xyzwh 106 132 2020 11 25
+  end
+end
+durationcanvas 128751 classinstance_ref 128239 // :ATM
+  xyzwh 244 113 2010 11 30
+end
+durationcanvas 129263 classinstance_ref 128239 // :ATM
+  xyzwh 244 173 2010 11 166
+end
+durationcanvas 129519 classinstance_ref 128367 // :BankDatabases
+  xyzwh 420 198 2010 11 48
+end
+durationcanvas 129903 classinstance_ref 128367 // :BankDatabases
+  xyzwh 420 273 2010 11 59
+end
+durationcanvas 130287 classinstance_ref 128111 // :User
+  xyzwh 100 328 2010 11 375
+  overlappingdurationcanvas 131311
+    xyzwh 106 513 2020 11 55
+    overlappingdurationcanvas 131823
+      xyzwh 112 538 2030 11 25
+    end
+  end
+end
+durationcanvas 130543 classinstance_ref 128239 // :ATM
+  xyzwh 244 371 2010 11 428
+end
+durationcanvas 130799 classinstance_ref 128367 // :BankDatabases
+  xyzwh 420 401 2010 11 397
+  overlappingdurationcanvas 132847
+    xyzwh 426 742 2020 11 25
+  end
+end
+durationcanvas 132463 classinstance_ref 128495 // :CashDispenser
+  xyzwh 619 666 2010 11 110
+end
+durationcanvas 133487 classinstance_ref 128239 // :ATM
+  xyzwh 244 830 2010 11 50
+  overlappingdurationcanvas 133871
+    xyzwh 250 849 2020 11 25
+  end
+end
+durationcanvas 133615 classinstance_ref 128111 // :User
+  xyzwh 100 830 2010 11 66
+  overlappingdurationcanvas 134127
+    xyzwh 106 865 2020 11 25
+  end
+end
+msg 128879 synchronous
+  from durationcanvas_ref 128623
+  to durationcanvas_ref 128751
+  yz 114 2015 explicitmsg "Insert ATM Card"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 137 101
+msg 129135 asynchronous
+  from durationcanvas_ref 128751
+  to durationcanvas_ref 129007
+  yz 132 2025 explicitmsg "Prompt from pin"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 141 119
+msg 129391 synchronous
+  from durationcanvas_ref 128623
+  to durationcanvas_ref 129263
+  yz 173 2015 explicitmsg "Enter PIN"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 154 160
+msg 129647 synchronous
+  from durationcanvas_ref 129263
+  to durationcanvas_ref 129519
+  yz 201 2015 explicitmsg "Verify PIN"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 314 188
+msg 129775 return
+  from durationcanvas_ref 129519
+  to durationcanvas_ref 129263
+  yz 231 2015 explicitmsg "PIN Verified"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 310 218
+msg 130031 synchronous
+  from durationcanvas_ref 129263
+  to durationcanvas_ref 129903
+  yz 274 2015 explicitmsg "Ceck Account Balance"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 285 261
+msg 130159 return
+  from durationcanvas_ref 129903
+  to durationcanvas_ref 129263
+  yz 306 2015 explicitmsg "Balance Availabel"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 296 293
+msg 130415 synchronous
+  from durationcanvas_ref 129263
+  to durationcanvas_ref 130287
+  yz 328 2015 explicitmsg "Prompt to select Amount"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 114 315
+msg 130671 synchronous
+  from durationcanvas_ref 130287
+  to durationcanvas_ref 130543
+  yz 374 2015 explicitmsg "Enter Withdrawal amount"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 116 361
+msg 130927 synchronous
+  from durationcanvas_ref 130543
+  to durationcanvas_ref 130799
+  yz 408 2015 explicitmsg "Validate withdrawal"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 291 395
+msg 131183 return
+  from durationcanvas_ref 130799
+  to durationcanvas_ref 130543
+  yz 496 2015 explicitmsg "Insufficient Balance"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 290 483
+msg 131439 synchronous
+  from durationcanvas_ref 130543
+  to durationcanvas_ref 131311
+  yz 519 2025 explicitmsg "Display Error message"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 127 506
+msg 131951 synchronous
+  from durationcanvas_ref 130543
+  to durationcanvas_ref 131823
+  yz 543 2035 explicitmsg "Return ATM Card"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 142 530
+msg 132335 return
+  from durationcanvas_ref 130799
+  to durationcanvas_ref 130543
+  yz 618 2015 explicitmsg "Approved"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 314 605
+msg 132591 asynchronous
+  from durationcanvas_ref 130543
+  to durationcanvas_ref 132463
+  yz 669 2015 explicitmsg "Request Cash Disponce"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 381 656
+msg 132719 return
+  from durationcanvas_ref 132463
+  to durationcanvas_ref 130543
+  yz 695 2015 explicitmsg "Cash dispensed"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 400 682
+msg 132975 synchronous
+  from durationcanvas_ref 130543
+  to durationcanvas_ref 132847
+  yz 742 2025 explicitmsg "Updte Account Balance"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 285 729
+msg 133359 return
+  from durationcanvas_ref 130799
+  to durationcanvas_ref 130543
+  yz 779 2025 explicitmsg "Balance Update"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 300 766
+msg 133743 synchronous
+  from durationcanvas_ref 133487
+  to durationcanvas_ref 133615
+  yz 830 2015 explicitmsg "Print Receipt ?(Yes/No)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 122 817
+msg 133999 synchronous
+  from durationcanvas_ref 133615
+  to durationcanvas_ref 133871
+  yz 849 2025 explicitmsg "Select and Option"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 138 836
+msg 134255 synchronous
+  from durationcanvas_ref 133487
+  to durationcanvas_ref 134127
+  yz 865 2025 explicitmsg "Return ATM Card"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 139 852
+end

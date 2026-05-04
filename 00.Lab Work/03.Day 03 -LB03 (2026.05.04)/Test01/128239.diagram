@@ -1,0 +1,92 @@
+format 224
+
+activitynodecanvas 128111 activitynode_ref 128239 // initial_node
+  xyz 318 16 2000
+end
+activitynodecanvas 128239 activitynode_ref 128367 // activity_final
+  xyz 333 645 2000
+end
+activityactioncanvas 128367 activityaction_ref 128239 // activity action Insert ATM Card
+  
+  show_opaque_action_definition default
+  xyzwh 238 70 2000 207 40
+end
+activityactioncanvas 128495 activityaction_ref 128367 // activity action Enter Pin
+  
+  show_opaque_action_definition default
+  xyzwh 256 152 2000 175 40
+end
+activitynodecanvas 128879 activitynode_ref 128495 // decision
+  xyz 332 242 2000
+end
+textcanvas 129007 "Validate Pin"
+  xyzwh 268 245 2000 62 15
+activityactioncanvas 129391 activityaction_ref 128495 // activity action Display Error
+  
+  show_opaque_action_definition default
+  xyzwh 437 340 2000 141 40
+end
+activityactioncanvas 129519 activityaction_ref 128623 // activity action Witdravel amount
+  
+  show_opaque_action_definition default
+  xyzwh 279 340 2000 134 40
+end
+activitynodecanvas 130415 activitynode_ref 128623 // merge
+  xyz 332 448 2000
+end
+activityactioncanvas 131951 activityaction_ref 128751 // activity action Return Atm Card
+  
+  show_opaque_action_definition default
+  xyzwh 263 534 2000 178 51
+end
+flowcanvas 128623 flow_ref 128239 // <flow>
+  decenter_end 444
+  
+  from ref 128111 z 2001 to ref 128367
+   write_horizontally default
+end
+flowcanvas 128751 flow_ref 128367 // <flow>
+  
+  from ref 128367 z 2001 to ref 128495
+   write_horizontally default
+end
+flowcanvas 129135 flow_ref 128495 // <flow>
+  
+  from ref 128495 z 2001 to ref 128879
+   write_horizontally default
+end
+flowcanvas 129647 flow_ref 128623 // Yes
+  
+  from ref 128879 z 2001 label "Yes" xyz 336 302 3000 to ref 129519
+   write_horizontally default
+end
+flowcanvas 130031 flow_ref 128751 // NO
+  
+  from ref 128879 z 2001 label "NO" xyz 422.5 255 3000 to point 502 260
+  line 130159 z 2001 to ref 129391
+   write_horizontally default
+end
+flowcanvas 130927 flow_ref 129007 // <flow>
+  
+  from ref 129519 z 2001 to ref 130415
+   write_horizontally default
+end
+flowcanvas 131439 flow_ref 129135 // <flow>
+  
+  from ref 129391 z 2001 to point 510 461
+  line 131567 z 2001 to ref 130415
+   write_horizontally default
+end
+flowcanvas 132335 flow_ref 129263 // <flow>
+  decenter_end 460
+  
+  from ref 130415 z 2001 to ref 131951
+   write_horizontally default
+end
+flowcanvas 132463 flow_ref 129391 // <flow>
+  decenter_end 639
+  
+  from ref 131951 z 2001 to ref 128239
+   write_horizontally default
+end
+end

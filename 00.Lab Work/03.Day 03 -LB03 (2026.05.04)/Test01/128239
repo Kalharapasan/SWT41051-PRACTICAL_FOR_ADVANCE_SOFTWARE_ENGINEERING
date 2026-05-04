@@ -1,0 +1,126 @@
+format 224
+"Online_Checkout_Journey_Package's" // Online_Checkout_Journey_Package's
+  revision 1
+  modified_by 111 "Kalhara"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 128239 "Online_Checkout_Journey_Class_View"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    activity 128239 "Online_Checkout_Journey_Activity's"
+      activitydiagram 128239 "Online_Checkout_Journey_Activity_Diagram's"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitynode 128239 initial_node ""
+	flow 128239 "<flow>"
+	  on activityaction_ref 128239 // activity action Insert ATM Card
+	end
+      end
+
+      activitynode 128367 activity_final ""
+      end
+
+      activityaction 128239 "Insert ATM Card"
+	opaque_action
+	flow 128367 "<flow>"
+	  on activityaction_ref 128367 // activity action Enter Pin
+	end
+      end
+
+      activityaction 128367 "Enter Pin"
+	opaque_action
+	flow 128495 "<flow>"
+	  on activitynode_ref 128495 // decision
+	end
+      end
+
+      activitynode 128495 decision "Validate Pin"
+	comment "Validate Pin"
+	flow 128623 "Yes"
+	  on activityaction_ref 128623 // activity action Witdravel amount
+	end
+
+	flow 128751 "NO"
+	  on activityaction_ref 128495 // activity action Display Error
+	end
+      end
+
+      activityaction 128495 "Display Error"
+	opaque_action
+	flow 129135 "<flow>"
+	  on activitynode_ref 128623 // merge
+	end
+      end
+
+      activityaction 128623 "Witdravel amount"
+	opaque_action
+	flow 128879 "<flow>"
+	  on activityaction_ref 128623 // activity action Witdravel amount
+	end
+
+	flow 129007 "<flow>"
+	  on activitynode_ref 128623 // merge
+	end
+      end
+
+      activitynode 128623 merge ""
+	flow 129263 "<flow>"
+	  on activityaction_ref 128751 // activity action Return Atm Card
+	end
+      end
+
+      activityaction 128751 "Return Atm Card"
+	opaque_action
+	flow 129391 "<flow>"
+	  on activitynode_ref 128367 // activity_final
+	end
+      end
+    end
+  end
+end

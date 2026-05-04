@@ -1,0 +1,12 @@
+window_sizes 1366 715 320 1041 563 104
+
+diagrams
+  active  sequencediagram_ref 128111 // ATM_Sequence_Diagram's
+    1041 563 100 A4 0 0
+end
+show_stereotypes
+selected class_ref 128495 // BankServer
+open
+  classview_ref 128111 // ATM_Sequence_Class_View
+end
+end

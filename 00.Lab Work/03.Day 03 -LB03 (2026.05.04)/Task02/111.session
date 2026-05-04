@@ -1,0 +1,14 @@
+window_sizes 1366 715 320 1041 565 104
+
+diagrams
+  sequencediagram_ref 128239 // Online_Store_Sequence_Diagram's
+    832 450 100 A4 372 0
+  active  activitydiagram_ref 128367 // Online_Checkout_Journey_Activity_Diagram's
+    1041 563 100 A4 0 0
+end
+show_stereotypes
+selected activitydiagram_ref 128367 // Online_Checkout_Journey_Activity_Diagram's
+open
+  activity_ref 128239 // Online_Checkout_Journey_Activity's
+end
+end
