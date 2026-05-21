@@ -1,0 +1,222 @@
+format 224
+"Online_Shopping_Checkout_Process_Packaes" // Online_Shopping_Checkout_Process_Packaes
+  revision 2
+  modified_by 111 "Kalhara"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 128239 "Online_Shopping_Checkout_Process_Class_View"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    activity 128239 "Online_Shopping_Checkout_Process_Activity's"
+      activitydiagram 128239 "Online_Shopping_Checkout_Process_Activity_Diagrm's"
+	activitydiagramsettings draw_all_relations no
+	 end
+	size A4
+      end
+
+      activitynode 128239 initial_node ""
+	flow 128239 "<flow>"
+	  on activityaction_ref 128239 // activity action Browse & Add Items Cart
+	end
+      end
+
+      activityaction 128239 "Browse & Add Items Cart"
+	opaque_action
+	flow 128367 "<flow>"
+	  on activityaction_ref 128367 // activity action Initiate Checkout 
+	end
+      end
+
+      activityaction 128367 "Initiate Checkout "
+	opaque_action
+	flow 128495 "<flow>"
+	  on activityaction_ref 128495 // activity action Review Cart & Quantities
+	end
+      end
+
+      activityaction 128495 "Review Cart & Quantities"
+	opaque_action
+	flow 128623 "<flow>"
+	  on activitynode_ref 128367 // decision
+	end
+      end
+
+      activitynode 128367 decision ""
+	flow 128751 "Yes"
+	  on activityaction_ref 128623 // activity action Enter Discount/Coupon 
+	end
+
+	flow 128879 "No"
+	  on activityaction_ref 128751 // activity action Enter Shipping Address
+	end
+      end
+
+      activityaction 128623 "Enter Discount/Coupon "
+	opaque_action
+	flow 129007 "<flow>"
+	  on activityaction_ref 128751 // activity action Enter Shipping Address
+	end
+      end
+
+      activityaction 128751 "Enter Shipping Address"
+	opaque_action
+	flow 129135 "<flow>"
+	  on activityaction_ref 128879 // activity action Display Shipping Options
+	end
+      end
+
+      activityaction 128879 "Display Shipping Options"
+	opaque_action
+	flow 129263 "<flow>"
+	  on activityaction_ref 129007 // activity action Select Shipping Method
+	end
+
+	flow 130287 "<flow>"
+	  on activityaction_ref 129007 // activity action Select Shipping Method
+	end
+      end
+
+      activityaction 129007 "Select Shipping Method"
+	opaque_action
+	flow 129391 "<flow>"
+	  on activityaction_ref 129135 // activity action Enter Payment Details  
+	end
+      end
+
+      activityaction 129135 "Enter Payment Details  "
+	opaque_action
+	flow 129775 "<flow>"
+	  on activityaction_ref 129263 // activity action Verify Payment Gateway
+	end
+      end
+
+      activityaction 129263 "Verify Payment Gateway"
+	opaque_action
+	flow 129647 "<flow>"
+	  on activitynode_ref 128495 // decision
+	end
+      end
+
+      activitynode 128495 decision ""
+	flow 129519 "NO"
+	  on activityaction_ref 129391 // activity action Notify Failure
+	end
+
+	flow 130543 "Yes"
+	  on activityaction_ref 129647 // activity action Create Order Record
+	end
+
+	flow 131183 "Yes"
+	  on activityaction_ref 129519 // activity action Process Order   
+	end
+      end
+
+      activityaction 129391 "Notify Failure"
+	opaque_action
+	flow 129903 "<flow>"
+	  on activitynode_ref 128623 // decision
+	end
+      end
+
+      activitynode 128623 decision ""
+	flow 130031 "No"
+	  on activitynode_ref 128751 // activity_final
+	end
+
+	flow 130159 "<flow>"
+	  on activityaction_ref 129135 // activity action Enter Payment Details  
+	end
+
+	flow 130415 "Yse"
+	  on activityaction_ref 129135 // activity action Enter Payment Details  
+	end
+      end
+
+      activitynode 128751 activity_final ""
+      end
+
+      activityaction 129519 "Process Order   "
+	opaque_action
+	flow 130927 "<flow>"
+	  on activityaction_ref 129903 // activity action  Send Confirmation  Email   
+	end
+
+	flow 131311 "<flow>"
+	  on activityaction_ref 129647 // activity action Create Order Record
+	end
+      end
+
+      activityaction 129647 "Create Order Record"
+	opaque_action
+	flow 130671 "<flow>"
+	  on activityaction_ref 129775 // activity action  Update Inventory   
+	end
+
+	flow 131439 "<flow>"
+	  on activityaction_ref 129775 // activity action  Update Inventory   
+	end
+      end
+
+      activityaction 129775 " Update Inventory   "
+	opaque_action
+	flow 130799 "<flow>"
+	  on activityaction_ref 129519 // activity action Process Order   
+	end
+
+	flow 131567 "<flow>"
+	  on activityaction_ref 129903 // activity action  Send Confirmation  Email   
+	end
+      end
+
+      activityaction 129903 " Send Confirmation  Email   "
+	opaque_action
+	flow 131055 "<flow>"
+	  on activitynode_ref 128751 // activity_final
+	end
+      end
+    end
+  end
+end
